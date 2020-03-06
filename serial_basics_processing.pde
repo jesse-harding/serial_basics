@@ -33,11 +33,13 @@ void draw () {
   background(0);
 
   //for multiple variables
-  if (inputVars[1] == 1) { //if button is pressed, the fill in processing will randomize every time the draw function runs
-    fill(color(int(random(255)), int(random(255)), int(random(255)))); 
+  if (inputVars.length > 1){
+     if (inputVars[1] == 1) { //if button is pressed, the fill in processing will randomize every time the draw function runs
+       fill(color(int(random(255)), int(random(255)), int(random(255)))); 
+     }
+    else {
+      fill(255); //otherwise fill is set to white
     }
-  else {
-    fill(255); //otherwise fill is set to white
   }
   rect(width/2, height/2, map(inputVars[0], 0, 1023, 0, width), map(inputVars[0], 0, 1023, 0, width)); //draw the rectangle at a size based on potentiometer data
 
