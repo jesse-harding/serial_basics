@@ -2,7 +2,7 @@
 //https://editor.p5js.org/jesse_harding/sketches/PguXV19U4
 
 //variable to hold incoming data
-String incomingData = "01!";
+String incomingData = "000000!";
 
 void setup() {
   //set pinmodes
@@ -23,24 +23,7 @@ void loop() {
 
 incomingData.trim();
 
-
- Serial.println(incomingData);
-
 analogWrite(11, incomingData.substring(0,3).toInt());
 analogWrite(6, incomingData.substring(3,6).toInt());
-
- 
- if (incomingData.substring(0,1) == "1") {
-  digitalWrite(12, HIGH); // Turn LED ON
- }
- else if (incomingData.substring(0,1) == "0"){
-  digitalWrite(12, LOW); // Turn LED OFF
- }
- 
- if (incomingData.substring(1,2) == "1") {
-  digitalWrite(A0, HIGH); //Turn LED ON
- } 
- else if (incomingData.substring(1,2) == "0") {
-  digitalWrite(A0, LOW); //Turn LED OFF
- } 
+  
 }
