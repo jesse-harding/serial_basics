@@ -3,11 +3,13 @@
 
 //variable to hold incoming data
 String incomingData = "01!";
+int ledPin1 = 6;
+int ledPin2 = 11;
 
 void setup() {
   //set pinmodes
-  pinMode(2, OUTPUT);
-  pinMode(3, OUTPUT);
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
   
   //set baudrate for serial communication
   Serial.begin(9600);
@@ -26,16 +28,16 @@ incomingData.trim();
 
  Serial.println(incomingData);
  if (incomingData.substring(0,1) == "1") {
-  digitalWrite(2, HIGH); // Turn LED ON
+  digitalWrite(ledPin1, HIGH); // Turn LED ON
  }
  else if (incomingData.substring(0,1) == "0"){
-  digitalWrite(2, LOW); // Turn LED OFF
+  digitalWrite(ledPin1, LOW); // Turn LED OFF
  }
  
  if (incomingData.substring(1,2) == "1") {
-  digitalWrite(3, HIGH); //Turn LED ON
+  digitalWrite(ledPin2, HIGH); //Turn LED ON
  } 
  else if (incomingData.substring(1,2) == "0") {
-  digitalWrite(3, LOW); //Turn LED OFF
+  digitalWrite(ledPin2, LOW); //Turn LED OFF
  } 
 }
