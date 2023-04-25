@@ -1,5 +1,6 @@
 //works with this p5 sketch:
 //https://editor.p5js.org/jesse_harding/sketches/-dqEDoKb
+//tinkercad setup: https://www.tinkercad.com/things/75mjjEGVidv-exquisite-uusam-elzing/editel?sharecode=lSg7WAIixEBa6NFT-GnltZWOZT-jVNwDnl40TJSY85o
 
 //variables for outgoing data
 int analogVal;
