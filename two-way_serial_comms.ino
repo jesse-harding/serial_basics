@@ -7,6 +7,8 @@ int analogVal;
 int digitalVal;
 String delimiter = "&";
 
+unsigned long prevMillis = 0; //variable for millis timer
+
 //variable to hold incoming data
 int incomingData;
 
@@ -25,7 +27,10 @@ void loop() {
   digitalVal = digitalRead(2);
 
   //concatenate sensors with delimiter between (this ampersand will allow p5 to split the two values apart
+  if (millis()-prevMillis > 20){ //we need to use a millis timer here to slow down the number of messages from arduino so as not to innundate the browser
   Serial.println(analogVal+delimiter+digitalVal);
+  prevMillis = millis();
+  }
   
   //check to see if there is a connection 
   if(Serial.available() > 0){ // Checks whether data is comming from the serial port
@@ -40,4 +45,5 @@ void loop() {
   digitalWrite(13, HIGH); //Turn LED ON
   incomingData = 0;
  } 
+//  delay(10);
 }
