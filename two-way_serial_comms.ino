@@ -13,7 +13,7 @@ int incomingData;
 void setup() {
   //set pinmodes
   pinMode(A0, INPUT);
-  pinMode(2, INPUT);
+  pinMode(2, INPUT_PULLUP);
   pinMode(13, OUTPUT);
   //set baudrate for serial communication
   Serial.begin(9600);
