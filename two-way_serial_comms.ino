@@ -27,7 +27,7 @@ void loop() {
   digitalVal = digitalRead(2);
 
   //concatenate sensors with delimiter between (this ampersand will allow p5 to split the two values apart
-  if (millis()-prevMillis > 20){ //we need to use a millis timer here to slow down the number of messages from arduino so as not to innundate the browser
+  if (millis()-prevMillis > 65){ //we need to use a millis timer here to slow down the number of messages from arduino so as not to innundate the browser
   Serial.println(analogVal+delimiter+digitalVal);
   prevMillis = millis();
   }
